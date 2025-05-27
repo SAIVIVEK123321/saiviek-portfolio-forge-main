@@ -164,13 +164,13 @@ const Contact = () => {
             </div>
 
             <a 
-              href="https://drive.google.com/file/d/10oR0WCgewtRZwKbSOthX43MG99IKVD8M/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1SBiFCtMlGcldeK_Df2ZwAd9hgpHWH6_i/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-white text-purple-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transform hover:scale-105 transition-all"
             >
               <Download className="w-5 h-5" />
-              <span>Download CV</span>
+              <span>Download Resume</span>
             </a>
           </div>
 

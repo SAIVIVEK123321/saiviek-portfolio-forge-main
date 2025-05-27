@@ -98,13 +98,13 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
-                href="https://drive.google.com/file/d/10oR0WCgewtRZwKbSOthX43MG99IKVD8M/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1SBiFCtMlGcldeK_Df2ZwAd9hgpHWH6_i/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-4 rounded-2xl font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white transition-all duration-300 flex items-center space-x-2"
               >
                 <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-                <span>Download CV</span>
+                <span>Download Resume</span>
               </a>
             </div>
 
