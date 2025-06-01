@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ArrowRight, Code } from 'lucide-react';
+import { Github, ArrowRight, Code, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -9,7 +9,9 @@ const Projects = () => {
       tech: ["MongoDB", "React.js", "Node.js"],
       image: "project1.png",
       stats: "30% performance improvement",
-      category: "Web Application"
+      category: "Web Application",
+      githubLink: "https://github.com/Mahidharchowdary2004/Online-Car-Rental",
+      deploymentLink: "https://online-car-rental-1j6k.onrender.com"
     },
     {
       title: "Online Job Portal",
@@ -17,7 +19,9 @@ const Projects = () => {
       tech: ["Django", "PostgreSQL", "Bootstrap", "HTML", "CSS", "Python"],
       image: "project2.jpg",
       stats: "Smart job matching",
-      category: "Platform"
+      category: "Platform",
+      githubLink: "https://github.com/Mahidharchowdary2004/job-portal-",
+      deploymentLink: ""
     },
     {
       title: "Career Assessment Tool",
@@ -25,7 +29,9 @@ const Projects = () => {
       tech: ["MySQL", "Spring Boot", "JSP", "Tailwind CSS", "HTML", "CSS"],
       image: "project3.png",
       stats: "Personalized guidance",
-      category: "Educational Tool"
+      category: "Educational Tool",
+      githubLink: "https://github.com/Mahidharchowdary2004/web-based-career-assessment-tool-for-students.git",
+      deploymentLink: ""
     }
   ];
 
@@ -62,37 +68,44 @@ const Projects = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
-                    >
+                  {project.tech.map((tech, index) => (
+                    <span key={index} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                  <div className="text-sm text-purple-600 dark:text-purple-400 font-medium">
                     {project.stats}
-                  </span>
-                  
-                  <div className="flex space-x-2">
-                    <button className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                      <Github className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                    </button>
-                    <button className="p-2 bg-gradient-to-r from-purple-600 to-orange-500 rounded-lg text-white hover:shadow-lg transition-shadow">
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    {project.githubLink && (
+                      <a 
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center space-x-1 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                        title="View on GitHub"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.deploymentLink && (
+                      <a 
+                        href={project.deploymentLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center space-x-1 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                        title="View Live Demo"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
