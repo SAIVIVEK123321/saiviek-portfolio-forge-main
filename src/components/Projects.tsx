@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, ArrowRight, Code, ExternalLink } from 'lucide-react';
+import { trackProjectClick } from '../utils/analytics';
 
 const Projects = () => {
   const projects = [
@@ -91,6 +92,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-1 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                         title="View on GitHub"
+                        onClick={() => trackProjectClick(project.title, 'github')}
                       >
                         <Github className="w-5 h-5" />
                       </a>
@@ -102,6 +104,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-1 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                         title="View Live Demo"
+                        onClick={() => trackProjectClick(project.title, 'deployment')}
                       >
                         <ExternalLink className="w-5 h-5" />
                       </a>

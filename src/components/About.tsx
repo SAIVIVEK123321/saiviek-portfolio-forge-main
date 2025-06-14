@@ -92,7 +92,7 @@ const About = () => {
                 <div>
                   <h5 className="font-medium text-gray-900 dark:text-white">B.Tech – Computer Science & Engineering</h5>
                   <p className="text-sm text-gray-600 dark:text-gray-400">KL University, Vijayawada</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">CGPA: 9.09 / 10</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">CGPA: 9.11 / 10</p>
                   <p className="text-sm text-purple-600 dark:text-purple-400">
                     Specialization: Data Science & Big Data Analytics
                   </p>
