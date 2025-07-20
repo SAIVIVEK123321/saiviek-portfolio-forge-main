@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, User, Download } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration
+// EmailJS Configuration 
+//ok
 // TODO: Update these values from your EmailJS dashboard
 const EMAILJS_CONFIG = {
   PUBLIC_KEY: 'DG5fNrxsSJR2Q-BW4',
