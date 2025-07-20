@@ -12,8 +12,7 @@ const EMAILJS_CONFIG = {
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     subject: '',
     message: ''
@@ -46,10 +45,11 @@ const Contact = () => {
 
     try {
       const templateParams = {
-        from_name: `${formData.firstName} ${formData.lastName}`,
+        fullName: formData.fullName,
         from_email: formData.email,
         subject: formData.subject,
-        message: formData.message
+        message: formData.message,
+        year: new Date().getFullYear()
       };
 
       console.log('Attempting to send email with:', {
@@ -71,7 +71,7 @@ const Contact = () => {
           type: 'success', 
           message: 'Message sent successfully! I will get back to you soon.' 
         });
-        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
+        setFormData({ fullName: '', email: '', subject: '', message: '' });
       } else {
         throw new Error(`Failed to send message. Status: ${response.status}`);
       }
@@ -188,39 +188,21 @@ const Contact = () => {
             )}
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent transition-colors"
-                    placeholder="Your first name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent transition-colors"
-                    placeholder="Your last name"
-                  />
-                </div>
+              <div className="md:col-span-2">
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent transition-colors"
+                  placeholder="Your full name"
+                />
               </div>
-              
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email
@@ -236,7 +218,6 @@ const Contact = () => {
                   placeholder="email@example.com"
                 />
               </div>
-              
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Subject
@@ -252,7 +233,6 @@ const Contact = () => {
                   placeholder="What's this about?"
                 />
               </div>
-              
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
