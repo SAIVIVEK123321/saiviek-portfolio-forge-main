@@ -35,6 +35,9 @@ const Header = () => {
             <a href="#experience" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
               Experience
             </a>
+            <a href="#certifications" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              Certifications
+            </a>
             <a href="#services" className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
               Services
             </a>

@@ -58,8 +58,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 w-80 max-w-full">
+                      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 w-full">
                         <div className="flex items-center space-x-2 mb-2">
                           <Award className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                           <h5 className="font-semibold text-gray-900 dark:text-white">Certificate</h5>
@@ -68,8 +68,15 @@ const Experience = () => {
                           <img 
                             src="/certificate1.jpg" 
                             alt="AI Certificate" 
-                            className="w-48 h-auto rounded-lg border border-gray-200 dark:border-gray-700"
+                            className="w-full max-w-xs h-auto rounded-lg border border-gray-200 dark:border-gray-700 mx-auto"
                           />
+                          <a
+                            href="/certificate1.jpg"
+                            download
+                            className="inline-block mt-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-500 text-white rounded-lg shadow hover:from-orange-500 hover:to-purple-600 transition-colors text-sm font-semibold"
+                          >
+                            Download Image
+                          </a>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             AI: Transformative Learning wit h TechSaksham<br />
                             Issued by: AICTE & EduSkills<br />
@@ -121,8 +128,8 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 w-80 max-w-full">
+                      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 w-full">
                         <div className="flex items-center space-x-2 mb-2">
                           <Award className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                           <h5 className="font-semibold text-gray-900 dark:text-white">Certificate</h5>
@@ -131,8 +138,15 @@ const Experience = () => {
                           <img 
                             src="/certificate2.jpg" 
                             alt="Cloud Certificate" 
-                            className="w-48 h-auto rounded-lg border border-gray-200 dark:border-gray-700"
+                            className="w-full max-w-xs h-auto rounded-lg border border-gray-200 dark:border-gray-700 mx-auto"
                           />
+                          <a
+                            href="/certificate2.jpg"
+                            download
+                            className="inline-block mt-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-orange-500 text-white rounded-lg shadow hover:from-orange-500 hover:to-purple-600 transition-colors text-sm font-semibold"
+                          >
+                            Download Image
+                          </a>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             Cloud Virtual Internship<br />
                             Issued by: AICTE & EduSkills<br />

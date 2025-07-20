@@ -33,6 +33,16 @@ const Projects = () => {
       category: "Educational Tool",
       githubLink: "https://github.com/Mahidharchowdary2004/web-based-career-assessment-tool-for-students.git",
       deploymentLink: ""
+    },
+    {
+      title: "Carni Walls Ice Cream",
+      description: "Carni Walls Ice Cream is a responsive web app built with React, TypeScript, Node.js, and Tailwind CSS, featuring flavor browsing, online ordering, and Google Analytics. It showcases my full-stack and UI/UX skills.",
+      tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Google Analytics"],
+      image: "Project45.png", // Make sure to add this image or use a placeholder
+      stats: "Full-stack, production-ready",
+      category: "Web Application",
+      githubLink: "https://github.com/Mahidharchowdary2004/Carni-Walls-Ice-Cream/", // Add GitHub link if available
+      deploymentLink: "https://carni-walls-ice-cream.onrender.com/" // Add deployment link if available
     }
   ];
 
@@ -116,11 +126,6 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all">
-            View All Projects
-          </button>
-        </div>
       </div>
     </section>
   );

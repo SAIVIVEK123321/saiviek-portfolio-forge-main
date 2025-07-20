@@ -16,7 +16,7 @@ const Skills = () => {
     {
       title: "Database",
       icon: <Database className="w-6 h-6" />,
-      skills: ["MongoDB", "PostgreSQL", "MySQL"]
+      skills: ["MongoDB", "MySQL"]
     },
    
     {
