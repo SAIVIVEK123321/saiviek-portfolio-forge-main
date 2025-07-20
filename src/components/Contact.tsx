@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 // TODO: Update these values from your EmailJS dashboard
 const EMAILJS_CONFIG = {
   PUBLIC_KEY: 'DG5fNrxsSJR2Q-BW4',
-  SERVICE_ID: 'service_q1sivty', 
+  SERVICE_ID: 'service_9mnjf2i', 
   TEMPLATE_ID: 'template_wkmbakg'
 };
 
