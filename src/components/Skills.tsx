@@ -4,6 +4,11 @@ import { Code2, Database, Cpu, Palette, Globe, Server } from 'lucide-react';
 const Skills = () => {
   const skillCategories = [
     {
+      title: "Programming Languages",
+      icon: <Cpu className="w-6 h-6" />,
+      skills: ["Java", "OOP's", "DSA"]
+    },
+    {
       title: "Frontend Development",
       icon: <Code2 className="w-6 h-6" />,
       skills: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"]
@@ -13,6 +18,7 @@ const Skills = () => {
       icon: <Server className="w-6 h-6" />,
       skills: ["Node.js", "Express", "Django", "REST APIs"]
     },
+
     {
       title: "Database",
       icon: <Database className="w-6 h-6" />,
