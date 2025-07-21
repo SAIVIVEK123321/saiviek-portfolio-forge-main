@@ -165,7 +165,7 @@ const Contact = () => {
             </div>
 
             <a 
-              href="https://drive.google.com/file/d/15X4i4FxFrl5onF4kTQ0dCi2gubpDlDsO/view?usp=sharing" 
+              href="https://drive.google.com/file/d/15X4i4FxFrl5onF4kTQ0dCi2gubpDlDsO/view" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-white text-purple-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transform hover:scale-105 transition-all"

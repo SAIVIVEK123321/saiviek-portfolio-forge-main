@@ -98,7 +98,7 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
-                href="https://drive.google.com/file/d/1SBiFCtMlGcldeK_Df2ZwAd9hgpHWH6_i/view?usp=sharing" 
+                href="https://drive.google.com/file/d/15X4i4FxFrl5onF4kTQ0dCi2gubpDlDsO/view" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-4 rounded-2xl font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white transition-all duration-300 flex items-center space-x-2"
@@ -115,7 +115,7 @@ const Hero = () => {
               <a href="https://www.linkedin.com/in/nallapaneni-mahidhar/" className="group p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
                 <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600" />
               </a>
-              <a href="mailto:220003@gmail.com" className="group p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+              <a href="mailto:2200032856cser@gmail.com" className="group p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
                 <Mail className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-orange-500" />
               </a>
             </div>
