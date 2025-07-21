@@ -78,7 +78,7 @@ const Contact = () => {
       }
     } catch (error: any) {
       console.error('Detailed error sending email:', error);
-      let errorMessage = 'Failed to send message. Please try again or contact me directly at nallapanenimahidhar2004@gmail.com';
+      let errorMessage = 'Failed to send message. Please try again or contact me directly at 2200032856cser@gmail.com';
       
       if (error.text) {
         if (error.text.includes('service ID not found')) {
@@ -121,10 +121,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
                   <a 
-                    href="mailto:nallapanenimahidhar2004@gmail.com" 
+                    href="mailto:2200032856cser@gmail.com" 
                     className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                   >
-                    nallapanenimahidhar2004@gmail.com
+                    2200032856cser@gmail.com
                   </a>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const Contact = () => {
             </div>
 
             <a 
-              href="https://drive.google.com/file/d/1SBiFCtMlGcldeK_Df2ZwAd9hgpHWH6_i/view?usp=sharing" 
+              href="https://drive.google.com/file/d/15X4i4FxFrl5onF4kTQ0dCi2gubpDlDsO/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-white text-purple-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transform hover:scale-105 transition-all"
