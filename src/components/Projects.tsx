@@ -1,50 +1,13 @@
 import React from 'react';
 import { Github, ArrowRight, Code, ExternalLink } from 'lucide-react';
 import { trackProjectClick } from '../utils/analytics';
+import { useQuery } from '@tanstack/react-query';
+import { fetchProjects } from '@/lib/api';
+
+const API_URL = 'http://localhost:4000';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Online Car Rental System",
-      description: "Secure and seamless booking platform with advanced features for vehicle management and user authentication.",
-      tech: ["MongoDB", "React.js", "Node.js"],
-      image: "project1.png",
-      stats: "30% performance improvement",
-      category: "Web Application",
-      githubLink: "https://github.com/Mahidharchowdary2004/Online-Car-Rental",
-      deploymentLink: "https://online-car-rental-1j6k.onrender.com"
-    },
-    {
-      title: "Online Job Portal",
-      description: "Comprehensive job matching platform connecting employers with candidates through intelligent algorithms.",
-      tech: ["Django", "PostgreSQL", "Bootstrap", "HTML", "CSS", "Python"],
-      image: "project2.jpg",
-      stats: "Smart job matching",
-      category: "Platform",
-      githubLink: "https://github.com/Mahidharchowdary2004/job-portal-",
-      deploymentLink: ""
-    },
-    {
-      title: "Career Assessment Tool",
-      description: "Web-based platform providing personalized career guidance for students through comprehensive assessments.",
-      tech: ["MySQL", "Spring Boot", "JSP", "Tailwind CSS", "HTML", "CSS"],
-      image: "project3.png",
-      stats: "Personalized guidance",
-      category: "Educational Tool",
-      githubLink: "https://github.com/Mahidharchowdary2004/web-based-career-assessment-tool-for-students.git",
-      deploymentLink: ""
-    },
-    {
-      title: "Carni Walls Ice Cream",
-      description: "Carni Walls Ice Cream is a responsive web app built with React, TypeScript, Node.js, and Tailwind CSS, featuring flavor browsing, online ordering, and Google Analytics. It showcases my full-stack and UI/UX skills.",
-      tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Google Analytics"],
-      image: "Project45.png", // Make sure to add this image or use a placeholder
-      stats: "Full-stack, production-ready",
-      category: "Web Application",
-      githubLink: "https://github.com/Mahidharchowdary2004/Carni-Walls-Ice-Cream/", // Add GitHub link if available
-      deploymentLink: "https://carni-walls-ice-cream.onrender.com/" // Add deployment link if available
-    }
-  ];
+  const { data: projects } = useQuery({ queryKey: ['projects'], queryFn: fetchProjects, initialData: [] });
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -66,7 +29,7 @@ const Projects = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={project.image} 
+                  src={project.image ? `${API_URL}${project.image}` : '/placeholder.svg'} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   onError={(e) => {
@@ -83,11 +46,11 @@ const Projects = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, index) => (
+                  {typeof project.tech === 'string' ? project.tech.split(',').map((tech, index) => (
                     <span key={index} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm">
-                      {tech}
+                      {tech.trim()}
                     </span>
-                  ))}
+                  )) : null}
                 </div>
                 
                 <div className="flex items-center justify-between">

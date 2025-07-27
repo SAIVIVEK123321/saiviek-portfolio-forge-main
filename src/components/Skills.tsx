@@ -1,36 +1,20 @@
 import React from 'react';
-import { Code2, Database, Cpu, Palette, Globe, Server } from 'lucide-react';
+import { Code2, Database, Cpu, Globe, Server } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { fetchSkills } from '@/lib/api';
+
+const API_URL = 'http://localhost:4000';
+
+const iconMap = {
+  cpu: <Cpu className="w-6 h-6" />,
+  code2: <Code2 className="w-6 h-6" />,
+  server: <Server className="w-6 h-6" />,
+  database: <Database className="w-6 h-6" />,
+  globe: <Globe className="w-6 h-6" />,
+};
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Programming Languages",
-      icon: <Cpu className="w-6 h-6" />,
-      skills: ["Java", "OOP's", "DSA"]
-    },
-    {
-      title: "Frontend Development",
-      icon: <Code2 className="w-6 h-6" />,
-      skills: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"]
-    },
-    {
-      title: "Backend Development",
-      icon: <Server className="w-6 h-6" />,
-      skills: ["Node.js", "Express", "Django", "REST APIs"]
-    },
-
-    {
-      title: "Database",
-      icon: <Database className="w-6 h-6" />,
-      skills: ["MongoDB", "MySQL"]
-    },
-   
-    {
-      title: "DevOps & Tools",
-      icon: <Globe className="w-6 h-6" />,
-      skills: ["Git", "AWS", "Azure"]
-    }
-  ];
+  const { data: skillCategories } = useQuery({ queryKey: ['skills'], queryFn: fetchSkills, initialData: [] });
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -52,21 +36,21 @@ const Skills = () => {
             >
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400 mr-4">
-                  {category.icon}
+                  {iconMap[category.icon] || <Code2 className="w-6 h-6" />}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
                   {category.title}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
+                {typeof category.skills === 'string' ? category.skills.split(',').map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
                     className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
                   >
-                    {skill}
+                    {skill.trim()}
                   </span>
-                ))}
+                )) : null}
               </div>
             </div>
           ))}

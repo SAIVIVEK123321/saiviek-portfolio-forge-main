@@ -69,7 +69,7 @@ const About = () => {
                 </div>
                 <div>
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Databases</span>
-                  <div className="text-xs text-gray-600 dark:text-gray-400">MySQL, MongoDB, PostgreSQL</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">MySQL, MongoDB</div>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ const About = () => {
                 <div>
                   <h5 className="font-medium text-gray-900 dark:text-white">B.Tech – Computer Science & Engineering</h5>
                   <p className="text-sm text-gray-600 dark:text-gray-400">KL University, Vijayawada</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">CGPA: 9.11 / 10</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">CGPA: 9.2 / 10</p>
                   <p className="text-sm text-purple-600 dark:text-purple-400">
                     Specialization: Data Science & Big Data Analytics
                   </p>
@@ -100,14 +100,14 @@ const About = () => {
 
                 <div>
                   <h5 className="font-medium text-gray-900 dark:text-white">Intermediate (12th Grade)</h5>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Narayana Junior College, Vijayawada</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Percentage: 74.1%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Narayana Junior College, visakhapatnam</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Percentage: 90%</p>
                 </div>
 
                 <div>
                   <h5 className="font-medium text-gray-900 dark:text-white">SSC (10th Grade)</h5>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Narayana High School, Vijayawada</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Marks: 597 / 600</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Narayana High School, visakhapatnam</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Marks: 585 / 600</p>
                 </div>
 
                 {/* Focus Areas */}
