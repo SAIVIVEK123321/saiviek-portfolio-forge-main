@@ -4,7 +4,7 @@ import { trackProjectClick } from '../utils/analytics';
 import { useQuery } from '@tanstack/react-query';
 import { fetchProjects } from '@/lib/api';
 
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
 
 const Projects = () => {
   const { data: projects } = useQuery({ queryKey: ['projects'], queryFn: fetchProjects, initialData: [] });

@@ -11,7 +11,22 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const DATA_DIR = path.resolve('./backend/data');
 
-app.use(cors());
+const allowedOrigins = [
+  'https://sai-vivek-portfolio.onrender.com', // production frontend
+  'http://localhost:5173', // local frontend (Vite default)
+];
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(bodyParser.json());
 
 // Root route to show backend is working
@@ -98,9 +113,9 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB Atlas
-mongoose.connect('mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority')
-.then(() => console.log('MongoDB connected'))
-.catch((err) => console.error('MongoDB connection error:', err));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority')
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 // Skill Model
 const skillSchema = new mongoose.Schema({

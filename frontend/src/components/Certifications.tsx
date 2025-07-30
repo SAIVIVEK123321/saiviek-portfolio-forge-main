@@ -3,7 +3,7 @@ import { Award } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCertifications } from '@/lib/api';
 
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
 
 const Certifications = () => {
   const { data: certifications } = useQuery({ queryKey: ['certifications'], queryFn: fetchCertifications, initialData: [] });

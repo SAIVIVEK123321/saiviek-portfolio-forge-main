@@ -3,7 +3,7 @@ import { Cloud, Brain, Award } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences } from '@/lib/api';
 
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
 
 const Experience = () => {
   const { data: experiences = [] } = useQuery({ queryKey: ['experiences'], queryFn: fetchExperiences, initialData: [] });
