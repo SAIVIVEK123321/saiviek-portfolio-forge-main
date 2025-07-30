@@ -14,6 +14,89 @@ const DATA_DIR = path.resolve('./backend/data');
 app.use(cors());
 app.use(bodyParser.json());
 
+// Root route to show backend is working
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Backend API Status</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                color: white;
+            }
+            .container {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 40px;
+                text-align: center;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                color: #4ade80;
+            }
+            .status {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                color: #e5e7eb;
+            }
+            .details {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 20px;
+                margin-top: 20px;
+                text-align: left;
+            }
+            .endpoint {
+                margin: 10px 0;
+                padding: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 5px;
+                font-family: 'Courier New', monospace;
+            }
+            .timestamp {
+                font-size: 0.9em;
+                color: #9ca3af;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>✅ Backend API</h1>
+            <div class="status">Server is running successfully!</div>
+            <div class="details">
+                <h3>Available Endpoints:</h3>
+                <div class="endpoint">GET /contact-info</div>
+                <div class="endpoint">GET /skills</div>
+                <div class="endpoint">GET /projects</div>
+                <div class="endpoint">GET /certifications</div>
+                <div class="endpoint">GET /experiences</div>
+                <div class="endpoint">GET /about</div>
+            </div>
+            <div class="timestamp">
+                Server started at: ${new Date().toLocaleString()}
+            </div>
+        </div>
+    </body>
+    </html>
+  `);
+});
+
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority')
 .then(() => console.log('MongoDB connected'))
