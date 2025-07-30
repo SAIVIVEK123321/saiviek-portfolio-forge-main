@@ -351,6 +351,12 @@ app.put('/about', authenticate, async (req, res) => {
   res.json({ success: true });
 });
 
+app.use(express.static(path.resolve('public')));
+
+app.get('/admin', (req, res) => {
+  res.sendFile(path.resolve('public', 'admin.html'));
+});
+
 app.listen(PORT, () => {
   console.log('Backend API running on port ' + PORT);
 });
