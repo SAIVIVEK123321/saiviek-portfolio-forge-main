@@ -1,4 +1,4 @@
-const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com/';
+const API_BASE = 'http://localhost:4000';
 
 export const fetchContactInfo = async () => {
   const res = await fetch(`${API_BASE}/contact-info`);

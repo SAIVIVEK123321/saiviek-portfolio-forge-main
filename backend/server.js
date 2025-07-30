@@ -15,10 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB Atlas
-mongoose.connect('mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority')
 .then(() => console.log('MongoDB connected'))
 .catch((err) => console.error('MongoDB connection error:', err));
 
