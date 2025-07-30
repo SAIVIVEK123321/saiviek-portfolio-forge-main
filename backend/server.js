@@ -351,10 +351,12 @@ app.put('/about', authenticate, async (req, res) => {
   res.json({ success: true });
 });
 
-app.use(express.static(path.resolve('public')));
+// Serve static files from the frontend public directory
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 
-app.get('/admin', (req, res) => {
-  res.sendFile(path.resolve('public', 'admin.html'));
+// Catch-all: send index.html for any route not handled above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/public', 'index.html'));
 });
 
 app.listen(PORT, () => {
