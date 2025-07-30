@@ -10,9 +10,9 @@ const API_BASE = 'http://localhost:4000';
 //ok
 // TODO: Update these values from your EmailJS dashboard
 const EMAILJS_CONFIG = {
-  PUBLIC_KEY: 'DG5fNrxsSJR2Q-BW4',
-  SERVICE_ID: 'service_9mnjf2i', 
-  TEMPLATE_ID: 'template_wkmbakg'
+  PUBLIC_KEY: 'Da1XuYZI4LfPw6NP1',
+  SERVICE_ID: 'service_3t2yiyd', 
+  TEMPLATE_ID: 'template_k0rluyy'
 };
 
 const Contact = () => {
