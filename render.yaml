@@ -9,3 +9,13 @@ services:
         value: production
       - key: PORT
         value: 10000
+
+  - type: web
+    name: saiviek-portfolio-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
