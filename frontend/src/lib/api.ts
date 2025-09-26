@@ -1,5 +1,5 @@
-// Local development API configuration
-export const API_BASE = 'http://localhost:4000';
+// Always use production backend URL
+export const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
 
 // For backward compatibility
 export const API_URL = API_BASE;
