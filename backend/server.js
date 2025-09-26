@@ -16,7 +16,8 @@ const PORT = process.env.PORT || 4000;
 const DATA_DIR = path.resolve('./backend/data');
 
 const allowedOrigins = [
-  'https://sai-vivek-portfolio.onrender.com', // production frontend
+  'https://saiviek.onrender.com', // production frontend
+  'https://sai-vivek-portfolio.onrender.com', // alternative production frontend
   'http://localhost:5173', // local frontend (Vite default)
   'http://localhost:8080', // local frontend (custom port)
   'http://localhost:3000', // alternative local port
