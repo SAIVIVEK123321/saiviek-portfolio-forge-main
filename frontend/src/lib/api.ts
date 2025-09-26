@@ -1,7 +1,5 @@
-// Use local backend in development, production backend in production
-export const API_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://saiviek-portfolio-forge-main.onrender.com'
-  : 'http://localhost:4000';
+// Always use production backend URL
+export const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
 
 // For backward compatibility
 export const API_URL = API_BASE;
