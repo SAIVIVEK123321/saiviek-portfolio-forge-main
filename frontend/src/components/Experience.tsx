@@ -2,8 +2,7 @@ import React from 'react';
 import { Cloud, Brain, Award } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences } from '@/lib/api';
-
-const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_URL } from '@/lib/api';
 
 const Experience = () => {
   const { data: experiences = [] } = useQuery({ queryKey: ['experiences'], queryFn: fetchExperiences, initialData: [] });

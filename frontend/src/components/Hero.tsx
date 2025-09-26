@@ -2,8 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, Download, ArrowRight, Sparkles } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchContactInfo } from '@/lib/api';
-
-const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_BASE } from '@/lib/api';
 
 const Hero = () => {
   const { data: contactInfo } = useQuery({ queryKey: ['contactInfo'], queryFn: fetchContactInfo, initialData: { resumeUrl: '', github: '', linkedin: '', email: '', profilePictureUrl: '' } });

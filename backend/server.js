@@ -18,6 +18,10 @@ const DATA_DIR = path.resolve('./backend/data');
 const allowedOrigins = [
   'https://sai-vivek-portfolio.onrender.com', // production frontend
   'http://localhost:5173', // local frontend (Vite default)
+  'http://localhost:8080', // local frontend (custom port)
+  'http://localhost:3000', // alternative local port
+  'http://127.0.0.1:8080', // localhost alternative
+  'http://127.0.0.1:5173', // localhost alternative
 ];
 app.use(cors({
   origin: function (origin, callback) {
@@ -117,9 +121,35 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB Atlas
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/?retryWrites=true&w=majority')
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+const connectDB = async () => {
+  try {
+    // Updated connection string with proper database name and options
+    const mongoURI = 'mongodb+srv://batchalasaivivek:Vivek123@cluster0.s3yio8l.mongodb.net/portfolio?retryWrites=true&w=majority';
+    
+    await mongoose.connect(mongoURI, {
+      serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
+      socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
+    });
+    
+    console.log('✅ MongoDB connected successfully');
+  } catch (error) {
+    console.error('❌ MongoDB connection error:', error.message);
+    
+    // Fallback to local MongoDB if Atlas fails
+    try {
+      console.log('🔄 Attempting to connect to local MongoDB...');
+      await mongoose.connect('mongodb://localhost:27017/portfolio');
+      console.log('✅ Local MongoDB connected successfully');
+    } catch (localError) {
+      console.error('❌ Local MongoDB connection also failed:', localError.message);
+      console.log('💡 Please ensure MongoDB is running locally or check your Atlas connection string');
+      // Don't exit the process, let the server run without DB for now
+    }
+  }
+};
+
+// Connect to database
+connectDB();
 
 // Skill Model
 const skillSchema = new mongoose.Schema({

@@ -3,8 +3,7 @@ import { Github, ArrowRight, Code, ExternalLink } from 'lucide-react';
 import { trackProjectClick } from '../utils/analytics';
 import { useQuery } from '@tanstack/react-query';
 import { fetchProjects } from '@/lib/api';
-
-const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_URL } from '@/lib/api';
 
 const Projects = () => {
   const { data: projects } = useQuery({ queryKey: ['projects'], queryFn: fetchProjects, initialData: [] });

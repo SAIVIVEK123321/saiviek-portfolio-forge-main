@@ -3,8 +3,7 @@ import { Mail, Github, Linkedin, User, Download } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useQuery } from '@tanstack/react-query';
 import { fetchContactInfo } from '@/lib/api';
-
-const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_BASE } from '@/lib/api';
 
 // EmailJS Configuration 
 //ok

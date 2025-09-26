@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-
-const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_BASE } from '@/lib/api';
 const AUTH_TOKEN = 'mahi@123';
 
 const SkillsAdmin = () => {

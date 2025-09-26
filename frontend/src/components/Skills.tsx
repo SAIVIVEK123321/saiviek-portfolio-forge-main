@@ -2,8 +2,7 @@ import React from 'react';
 import { Code2, Database, Cpu, Globe, Server } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchSkills } from '@/lib/api';
-
-const API_URL = 'https://saiviek-portfolio-forge-main.onrender.com';
+import { API_URL } from '@/lib/api';
 
 const iconMap = {
   cpu: <Cpu className="w-6 h-6" />,

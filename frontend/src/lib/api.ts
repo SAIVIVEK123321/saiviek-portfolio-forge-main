@@ -1,4 +1,10 @@
-const API_BASE = 'https://saiviek-portfolio-forge-main.onrender.com';
+// Use local backend in development, production backend in production
+export const API_BASE = process.env.NODE_ENV === 'production' 
+  ? 'https://saiviek-portfolio-forge-main.onrender.com'
+  : 'http://localhost:4000';
+
+// For backward compatibility
+export const API_URL = API_BASE;
 
 export const fetchContactInfo = async () => {
   const res = await fetch(`${API_BASE}/contact-info`);
